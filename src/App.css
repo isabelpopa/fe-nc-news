@@ -4,3 +4,45 @@
   padding: 2rem;
   text-align: center;
 }
+
+h1 {
+  margin: 1rem;
+}
+
+.h2-home {
+  padding: 2rem;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.article-img {
+  object-fit: contain;
+  height: 20rem;
+  width: 25rem;
+  text-align: center;
+}
+
+.author-date {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.vote-button {
+  text-align: center;
+  margin: 5px;
+}
+.comment-button {
+  text-align: center;
+  margin: 5px;
+}
+
+.article-comment {
+  padding-top: 20px;
+}
+
+.article-item {
+  border: solid;
+  margin: 10px;
+}
