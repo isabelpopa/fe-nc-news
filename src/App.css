@@ -3,6 +3,11 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  line-height: 1.5;
+}
+
+.header {
+  padding: 1rem;
 }
 
 h1 {
@@ -18,13 +23,27 @@ ul {
 }
 
 .article-img {
-  object-fit: contain;
-  height: 20rem;
-  width: 25rem;
-  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  padding: 1em;
+}
+
+.article-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  padding: 1em;
 }
 
 .author-date {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.topic-author {
   display: flex;
   justify-content: space-evenly;
 }
@@ -45,4 +64,9 @@ ul {
 .article-item {
   border: solid;
   margin: 10px;
+}
+
+.article-details {
+  padding-top: 1em;
+  padding-bottom: 1em;
 }

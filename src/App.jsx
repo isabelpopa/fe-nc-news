@@ -2,7 +2,8 @@ import './App.css'
 import { Home } from '../components/Home'
 import { Navbar } from '../components/Navbar'
 import { Routes, Route } from 'react-router-dom';
-import { ArticlesPage } from '../components/ArticlesPage';
+import { SingleArticle } from '../components/SingleArticle';
+import { ArticlesList } from '../components/ArticlesList';
 
 function App() {
 
@@ -11,7 +12,8 @@ function App() {
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/articles' element={<ArticlesPage />} />
+        <Route path='/articles' element={<ArticlesList />} />
+        <Route path='/articles/:article_id' element={<SingleArticle />} />
       </Routes>
     </>
   )
