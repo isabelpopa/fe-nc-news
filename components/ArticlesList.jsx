@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
+import { getArticles } from "../utils/api";
 import { ArticleCard } from "./ArticlesCard";
+import { Loading } from "./Loading";
+import { Header } from "./Header";
 
 export const ArticlesList = () => {
     const [articles, setArticles] = useState([]);
@@ -8,10 +10,9 @@ export const ArticlesList = () => {
     const [isError, setIsError] = useState(false);
 
     useEffect(() => {
-        axios
-            .get(`https://nc-news-lb25.onrender.com/api/articles`)
-            .then((response) => {
-                setArticles(response.data.articles);
+        getArticles()
+            .then((articlesFromApi) => {
+                setArticles(articlesFromApi);
                 setIsLoading(false);
             })
             .catch((error) => {
@@ -20,24 +21,21 @@ export const ArticlesList = () => {
             })
     }, []);
 
-    if (isError) return <p>Something went wrong!</p>
-    if (isLoading) return (
-        <div className="d-flex justify-content-center">
-            <div className="spinner-border m-5" role="status">
-                <span className="sr-only">Loading...</span>
-            </div>
-            </div>
-    );
+    if (isError) return <p>Something went wrong!</p>;
+    if (isLoading) return <Loading />;
 
     return (
-        <ul className="articles-list">
-            {articles.map((article) => {
-                return (
-                    <li className="articles-card" key={article.article_id}>
-                        <ArticleCard article={article}/>
-                    </li>
-                )
-            })}
-        </ul>
+        <>
+            <Header />
+            <ul className="articles-list">
+                {articles.map((article) => {
+                    return (
+                        <li className="articles-card" key={article.article_id}>
+                            <ArticleCard article={article} />
+                        </li>
+                    )
+                })}
+            </ul>
+        </>
     )
 }

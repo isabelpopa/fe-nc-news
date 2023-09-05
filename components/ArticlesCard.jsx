@@ -7,8 +7,8 @@ export const ArticleCard = ({ article }) => {
             <div className="article-item">
                 <h1 className="h1-article">{article.title}</h1>
                 <div className="author-date">
-                    <li>Author: {article.author}</li>
-                    <li>Date: {moment(article.created_at).format('LLL')}</li>
+                    <p>Author: {article.author}</p>
+                    <p>Date: {moment(article.created_at).format("Do MMM YY")}</p>
                 </div>
                 <p className="article-comment">Comments: {article.comment_count}</p>
                 <img className="article-img" src={article.article_img_url}></img>
