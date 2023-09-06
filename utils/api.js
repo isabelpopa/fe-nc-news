@@ -15,3 +15,9 @@ export const getArticle = (article_id) => {
     })
 };
 
+export const getComments = (article_id) => {
+    return ncNews.get(`/articles/${article_id}/comments`).then(({ data }) => {
+        return data.comments
+    })
+};
+

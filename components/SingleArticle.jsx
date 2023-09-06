@@ -37,7 +37,7 @@ export const SingleArticle = () => {
                     <p>Date: {moment(article.created_at).format("Do MMM YY")}</p>
                 </div>
                 <p>{article.body}</p>
-                <img className="article-image" src={article.article_img_url}></img>
+                <img className="article-image" src={article.article_img_url} alt={article.title}></img>
                 <div className="article-details">
                     <button className="vote-button">Vote up</button>
                     <button className="vote-button">Vote down</button>
