@@ -11,7 +11,7 @@ export const ArticleCard = ({ article }) => {
                     <p>Date: {moment(article.created_at).format("Do MMM YY")}</p>
                 </div>
                 <p className="article-comment">Comments: {article.comment_count}</p>
-                <img className="article-img" src={article.article_img_url}></img>
+                <img className="article-img" src={article.article_img_url} alt={article.title}></img>
                 <div className="article-details">
                     {/* Will need to implement buttons functionality */}
                     <button className="vote-button">Vote up</button>
