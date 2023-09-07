@@ -6,10 +6,11 @@ import { Header } from "./Header";
 
 export const ArticlesList = () => {
     const [articles, setArticles] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(false);
     const [isError, setIsError] = useState(false);
 
     useEffect(() => {
+        setIsLoading(true)
         getArticles()
             .then((articlesFromApi) => {
                 setArticles(articlesFromApi);
@@ -31,7 +32,7 @@ export const ArticlesList = () => {
                 {articles.map((article) => {
                     return (
                         <li className="articles-card" key={article.article_id}>
-                            <ArticleCard article={article} />
+                            <ArticleCard article={article}/>
                         </li>
                     )
                 })}

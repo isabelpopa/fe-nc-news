@@ -7,11 +7,11 @@ import { CommentsCard } from "./CommentsCard";
 export const CommentsList = () => {
     const { article_id } = useParams();
     const [comments, setComments] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(false);
     const [isError, setIsError] = useState(false);
 
     useEffect(() => {
-        console.log(article_id)
+        setIsLoading(true)
         getComments(article_id)
             .then((commentsFromApi) => {
                 setComments(commentsFromApi);
@@ -28,18 +28,20 @@ export const CommentsList = () => {
     if (isLoading) return <Loading />;
 
     return (
-        
+
         <>
             <h1>Comments:</h1>
+            <section>
             <ul className="comments-list">
                 {comments.map((comment) => {
                     return (
                         <li className="comment-card" key={comment.comment_id}>
-                            <CommentsCard comment={comment} />
+                            <CommentsCard comment={comment}/>
                         </li>
                     )
                 })}
             </ul>
+            </section>
         </>
     )
 }
