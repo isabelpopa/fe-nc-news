@@ -10,6 +10,7 @@ export const SingleArticle = () => {
     const [article, setArticle] = useState({});
     const [isLoading, setIsLoading] = useState(false);
     const [isError, setIsError] = useState(false);
+    const [errMsg, setErrMsg] = useState(null);
     const [votes, setVotes] = useState(0);
 
     useEffect(() => {
@@ -27,6 +28,7 @@ export const SingleArticle = () => {
     }, [article_id]);
 
     const handleVoteUp = () => {
+        setErrMsg(null);
         updateArticleVoteUp(article_id)
             .then(() => {
                 setVotes((currentVotes) => currentVotes + 1)
@@ -34,7 +36,7 @@ export const SingleArticle = () => {
             .catch((error) => {
                 setVotes((currentVotes) => currentVotes - 1)
                 setIsLoading(false);
-                alert("Something went wrong, your vote up could not be added");
+                setErrMsg("Something went wrong, your vote up could not be added");
             });
     };
 
@@ -46,13 +48,14 @@ export const SingleArticle = () => {
             .catch((error) => {
                 setVotes((currentVotes) => currentVotes + 1)
                 setIsLoading(false);
-                alert("Something went wrong, your vote down could not be added");
+                setErrMsg("Something went wrong, your vote down could not be added");
             });
     };
 
 
     if (isError) return <p>Something went wrong!</p>;
     if (isLoading) return <Loading />;
+    if (errMsg) return <p>{errMsg}</p>
 
     return (
         <>
