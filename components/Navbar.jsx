@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
+import { UserContext } from "./context/users";
+import { useContext } from "react";
 
 export const Navbar = () => {
+    const { username, setUsername } = useContext(UserContext);
+
     return (
         <>
             <nav className="navbar navbar-expand-lg navbar-dark ">
