@@ -22,7 +22,6 @@ export const CommentAdder = ({ article_id, updateComments }) => {
                 alert("Your comment could not be added!")
             })
         setNewComment("");
-        console.log(comment);
     }
 
 
