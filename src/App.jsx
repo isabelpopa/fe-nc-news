@@ -7,9 +7,7 @@ import { ArticlesList } from './components/articles/ArticlesList';
 import { UsersList } from './components/users/UsersList';
 import { TopicsList } from './components/topics/TopicsList';
 import { Profile } from './components/Profile';
-import { Coding } from './components/topics/Coding';
-import { Football } from './components/topics/Football';
-import { Cooking } from './components/topics/Cooking';
+import { Topic } from './components/topics/Topic';
 
 function App() {
 
@@ -23,9 +21,7 @@ function App() {
         <Route path='/topics' element={<TopicsList />} />
         <Route path='/profile' element={<Profile />} />
         <Route path='/users' element={<UsersList />} />
-        <Route path='/topics/coding' element={<Coding />} />
-        <Route path='/topics/football' element={<Football />} />
-        <Route path='/topics/cooking' element={<Cooking />} />
+        <Route path='/topics/:topicSlug' element={<Topic />} />
       </Routes>
     </>
   )
