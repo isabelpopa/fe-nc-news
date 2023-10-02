@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { getTopics } from "../utils/api";
-import { Loading } from "./Loading";
+import { getTopics } from "../../utils/api";
+import { Loading } from "../Loading";
 import { TopicsCard } from "./TopicsCard";
 
 export const TopicsList = () => {
@@ -30,7 +30,6 @@ export const TopicsList = () => {
                 <h1 className="h1-user">Topics:</h1>
                 <ul className="topics-list">
                     {topics.map((topic) => {
-                        console.log(topic);
                         return (
                             <li className="topics-card" key={topics.indexOf(topic) + 1}>
                                 <TopicsCard topic={topic} />

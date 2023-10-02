@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
-import { getUsers } from "../utils/api";
-import { Loading } from "./Loading";
+import { getUsers } from "../../utils/api";
+import { Loading } from "../Loading";
 import { UsersCard } from "./UsersCard";
 
 export const UsersList = () => {

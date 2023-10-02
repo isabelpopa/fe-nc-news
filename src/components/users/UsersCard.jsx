@@ -1,7 +1,7 @@
 // import { Link } from "react-router-dom";
 // import moment from "moment";
 import { useContext } from "react";
-import { UserContext } from "./context/users";
+import { UserContext } from "../context/users";
 
 export const UsersCard = ({ username }) => {
     const { user, setUser } = useContext(UserContext);

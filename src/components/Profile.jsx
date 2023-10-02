@@ -1,4 +1,4 @@
-import { UsersList } from "./UsersList";
+import { UsersList } from "./users/UsersList";
 import { UserContext } from "./context/users";
 import { useContext } from "react";
 

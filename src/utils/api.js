@@ -22,6 +22,12 @@ export const getArticle = (article_id) => {
     })
 };
 
+export const getArticlesByTopic = (topic) => {
+    return ncNews.get(`/articles?topic=${topic}`).then(({ data }) => {
+        return data.articles;
+    })
+};
+
 export const getComments = (article_id) => {
     return ncNews.get(`/articles/${article_id}/comments`).then(({ data }) => {
         return data.comments
