@@ -7,6 +7,9 @@ import { ArticlesList } from '../components/ArticlesList';
 import { UsersList } from '../components/UsersList';
 import { TopicsList } from '../components/TopicsList';
 import { Profile } from '../components/Profile';
+import { Coding } from '../components/Coding';
+import { Football } from '../components/Football';
+import { Cooking } from '../components/Cooking';
 
 function App() {
 
@@ -20,6 +23,9 @@ function App() {
         <Route path='/topics' element={<TopicsList />} />
         <Route path='/profile' element={<Profile />} />
         <Route path='/users' element={<UsersList />} />
+        <Route path='/topics/coding' element={<Coding />} />
+        <Route path='/topics/football' element={<Football />} />
+        <Route path='/topics/cooking' element={<Cooking />} />
       </Routes>
     </>
   )

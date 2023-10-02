@@ -12,22 +12,26 @@ export const CommentAdder = ({ article_id, updateComments }) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        if (newComment.length < 1 || newComment === " ") {
+            alert("Your comment is empty!");
+            return;
+        }
         const comment = { body: newComment, username: user.username, votes: 0, created_at: new Date().toISOString() };
         postComment(article_id, comment)
             .then((comment) => {
                 updateComments(comment);
+                setNewComment("");
             })
             .catch((error) => {
                 console.log(error);
                 alert("Your comment could not be added!")
             })
-        setNewComment("");
     }
 
 
     return (
         <form className="comment-form" onSubmit={handleSubmit} >
-            <input type="text" id="comment" value={newComment} onChange={handleChange} className="comment-bar" placeholder="Add a comment"></input>
+            <textarea id="comment" value={newComment} onChange={handleChange} className="comment-bar" placeholder="Add a comment"></textarea>
             <button className="add-comment">Submit</button>
         </form>
     )
