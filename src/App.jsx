@@ -1,15 +1,15 @@
 import './App.css'
-import { Home } from '../components/Home'
-import { Navbar } from '../components/Navbar'
+import { Home } from './components/Home'
+import { Navbar } from './components/Navbar'
 import { Routes, Route } from 'react-router-dom';
-import { SingleArticle } from '../components/SingleArticle';
-import { ArticlesList } from '../components/ArticlesList';
-import { UsersList } from '../components/UsersList';
-import { TopicsList } from '../components/TopicsList';
-import { Profile } from '../components/Profile';
-import { Coding } from '../components/Coding';
-import { Football } from '../components/Football';
-import { Cooking } from '../components/Cooking';
+import { SingleArticle } from './components/articles/SingleArticle';
+import { ArticlesList } from './components/articles/ArticlesList';
+import { UsersList } from './components/users/UsersList';
+import { TopicsList } from './components/topics/TopicsList';
+import { Profile } from './components/Profile';
+import { Coding } from './components/topics/Coding';
+import { Football } from './components/topics/Football';
+import { Cooking } from './components/topics/Cooking';
 
 function App() {
 

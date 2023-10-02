@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getComments } from "../utils/api";
-import { Loading } from "./Loading";
+import { getComments } from "../../utils/api";
+import { Loading } from "../Loading";
 import { CommentsCard } from "./CommentsCard";
 import { CommentAdder } from "./CommentAdder"
 

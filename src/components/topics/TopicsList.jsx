@@ -1,19 +1,18 @@
-import { useContext, useEffect, useState } from "react";
-import { getUsers } from "../utils/api";
-import { Loading } from "./Loading";
-import { UsersCard } from "./UsersCard";
+import { useEffect, useState } from "react";
+import { getTopics } from "../..//utils/api";
+import { Loading } from "../Loading";
+import { TopicsCard } from "./TopicsCard";
 
-export const UsersList = () => {
-    const [usernames, setUsernames] = useState([]);
+export const TopicsList = () => {
+    const [topics, setTopics] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [isError, setIsError] = useState(false);
 
-
     useEffect(() => {
         setIsLoading(true)
-        getUsers()
-            .then((usersFromApi) => {
-                setUsernames(usersFromApi);
+        getTopics()
+            .then((topicsFromApi) => {
+                setTopics(topicsFromApi);
                 setIsLoading(false);
             })
             .catch((error) => {
@@ -28,11 +27,12 @@ export const UsersList = () => {
     return (
         <>
             <section>
-                <ul className="users-list">
-                    {usernames.map((username) => {
+                <h1 className="h1-user">Topics:</h1>
+                <ul className="topics-list">
+                    {topics.map((topic) => {
                         return (
-                            <li className="users-card" key={username.username}>
-                                <UsersCard username={username} />
+                            <li className="topics-card" key={topics.indexOf(topic) + 1}>
+                                <TopicsCard topic={topic} />
                             </li>
                         )
                     })}

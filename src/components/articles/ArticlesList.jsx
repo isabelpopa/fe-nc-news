@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { getArticles } from "../utils/api";
+import { getArticles } from "../../utils/api";
 import { ArticleCard } from "./ArticlesCard";
-import { Loading } from "./Loading";
-import { Header } from "./Header";
+import { Loading } from "../Loading";
+import { Header } from "../Header";
 
 export const ArticlesList = () => {
     const [articles, setArticles] = useState([]);

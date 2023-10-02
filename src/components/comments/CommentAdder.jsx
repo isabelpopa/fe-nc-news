@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
-import { postComment } from "../utils/api";
-import { UserContext } from "./context/users";
+import { postComment } from "../../utils/api";
+import { UserContext } from "../context/users";
 
 export const CommentAdder = ({ article_id, updateComments }) => {
     const [newComment, setNewComment] = useState("");
@@ -21,6 +21,7 @@ export const CommentAdder = ({ article_id, updateComments }) => {
             .then((comment) => {
                 updateComments(comment);
                 setNewComment("");
+                alert("Your comment has been successfully added!")
             })
             .catch((error) => {
                 console.log(error);

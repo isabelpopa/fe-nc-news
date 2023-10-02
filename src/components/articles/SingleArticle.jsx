@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getArticle, updateArticleVoteDown, updateArticleVoteUp } from "../utils/api";
-import { Loading } from "./Loading";
+import { getArticle, updateArticleVoteDown, updateArticleVoteUp } from "../../utils/api";
+import { Loading } from "../Loading";
 import moment from "moment";
-import { CommentsList } from "./CommentsList";
+import { CommentsList } from "../comments/CommentsList";
 
 export const SingleArticle = () => {
     const { article_id } = useParams();
